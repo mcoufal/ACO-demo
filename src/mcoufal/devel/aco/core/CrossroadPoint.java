@@ -1,6 +1,6 @@
 package mcoufal.devel.aco.core;
 
-import java.awt.Point;
+import java.awt.geom.Point2D;
 
 /**
  * Class representing crossroad in Ant Colony Optimization Algorithm.
@@ -13,14 +13,15 @@ public class CrossroadPoint {
 	// ID of the given crossroad
 	private int id;
 	// crossroad coordinates
-	private Point coordinates = null;
+	private Point2D.Double coordinates = null;
 
 	/**
-	 * TODO
+	 * Initialise crossroad point.
+	 * 
 	 * @param id
 	 * @param coordinates
 	 */
-	public CrossroadPoint(int id, Point coordinates) {
+	public CrossroadPoint(int id, Point2D.Double coordinates) {
 		this.id = id;
 		this.coordinates = coordinates;
 	}
@@ -31,7 +32,7 @@ public class CrossroadPoint {
 	 * @param p
 	 * @return
 	 */
-	public double getDistance(Point p) {
+	public double getDistance(Point2D.Double p) {
 		return Math.hypot(this.getCoordinates().getX() - p.getX(), this.getCoordinates().getY() - p.getY());
 	}
 
@@ -40,15 +41,16 @@ public class CrossroadPoint {
 	 * 
 	 * @return
 	 */
-	public Point getCoordinates() {
+	public Point2D.Double getCoordinates() {
 		return this.coordinates;
 	}
 
 	/**
 	 * Returns ID of given crossroad.
+	 * 
 	 * @return
 	 */
-	public int getID () {
+	public int getID() {
 		return this.id;
 	}
 }

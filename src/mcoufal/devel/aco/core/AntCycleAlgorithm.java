@@ -51,7 +51,7 @@ public class AntCycleAlgorithm implements AntColonyAlgorithm {
 	private double ro = 0.1;
 
 	/**
-	 * TODO: ALGORITHM VARIABLES SHOULD BE HERE! Initialise colony.
+	 * Initialise colony.
 	 * 
 	 * @param numberOfAnts
 	 */
@@ -104,6 +104,12 @@ public class AntCycleAlgorithm implements AntColonyAlgorithm {
 	 * @param maximumIterations
 	 */
 	public void initialiseBeforeIteration(int numberOfAnts, int numberOfCrossroads, int maximumIterations) {
+
+		// no ants or crossroads
+		if (numberOfAnts <= 0 || numberOfCrossroads <= 0) {
+			bestPathLength = 0;
+			return;
+		}
 
 		// maximum number of cycles of Ant Cycle algorithm
 		this.maximumIterations = maximumIterations;
@@ -166,20 +172,9 @@ public class AntCycleAlgorithm implements AntColonyAlgorithm {
 	 * 
 	 * @return
 	 */
-	public Boolean isOver() {
-		return false;
-	}
-
-	/**
-	 * TODO Not implemented yet!
-	 * 
-	 * @return
-	 */
 	public void run() {
 		for (int i = 1; i <= this.maximumIterations; i++) {
 			step();
-			if (isOver())
-				break;
 		}
 	}
 

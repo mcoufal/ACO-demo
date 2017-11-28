@@ -148,6 +148,11 @@ public class Ant {// TODO: check if arraylist is OK with my cause(order of items
 		return visitedCrossroads;
 	}
 
+	/**
+	 * Compute increment of pheromone levels.
+	 * 
+	 * 	delta tau = (Q/L)
+	 */
 	public void computeIncreaseOfPheromone() {
 		CrossroadPoint prev = null;
 		for (CrossroadPoint crossroad : visitedCrossroads) {
