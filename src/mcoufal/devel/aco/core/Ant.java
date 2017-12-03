@@ -41,7 +41,7 @@ public class Ant {// TODO: check if arraylist is OK with my cause(order of items
 	// current path length
 	private double pathLength = 0;
 	// pheromone quantity given by each ant per cycle
-	private int quantityOfPheromone = 100;
+	private double quantityOfPheromone = 100;
 
 	public Ant(AntColonyAlgorithm algorithm, ArrayList<CrossroadPoint> allCrossroads) {
 		this.numberOfCrossroads = allCrossroads.size();

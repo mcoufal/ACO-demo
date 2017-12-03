@@ -42,11 +42,11 @@ public class AntCycleAlgorithm implements AntColonyAlgorithm {
 	// visibility between two crossroads
 	private double[][] eta;
 	// impact parameter of pheromone
-	private int alpha;
+	private double alpha;
 	// impact parameter of visibility
-	private int beta;
+	private double beta;
 	// pheromone quantity given by each ant per cycle
-	private int quantityOfPheromone = 100;
+	private double quantityOfPheromone = 100;
 	// pheromone evaporation parameter
 	private double ro = 0.1;
 
@@ -56,7 +56,7 @@ public class AntCycleAlgorithm implements AntColonyAlgorithm {
 	 * @param numberOfAnts
 	 */
 	public AntCycleAlgorithm(int maximumIterations, int numberOfAnts, int numberOfCrossroads,
-			ArrayList<CrossroadPoint> allCrossroads, int a, int alpha, int beta, int quantityOfPheromone, double ro) {
+			ArrayList<CrossroadPoint> allCrossroads, double a, double alpha, double beta, double quantityOfPheromone, double ro) {
 
 		// initialise algorithm variables
 		this.maximumIterations = maximumIterations;
@@ -189,14 +189,14 @@ public class AntCycleAlgorithm implements AntColonyAlgorithm {
 	/**
 	 * @return Alpha - impact parameter of pheromone.
 	 */
-	public int getAlpha() {
+	public double getAlpha() {
 		return alpha;
 	}
 
 	/**
 	 * @return Beta - impact parameter of visibility.
 	 */
-	public int getBeta() {
+	public double getBeta() {
 		return beta;
 	}
 
@@ -232,7 +232,7 @@ public class AntCycleAlgorithm implements AntColonyAlgorithm {
 	 * 
 	 * @return
 	 */
-	public int getQuantityOfPheromone() {
+	public double getQuantityOfPheromone() {
 		return quantityOfPheromone;
 	}
 
